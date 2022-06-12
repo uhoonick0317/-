@@ -4,12 +4,11 @@ const todayDiv = document.getElementById("today");
 
 
 function getTime() {
-  console.log("실행됨")
-  const now = new Date();
-  const hour = now.getHours(); //0-23시
-  const minute = now.getMinutes(); //0-59분
-  const second = now.getSeconds(); //0-59초
-  const noon = "오전";
+  let now = new Date();
+  let hour = now.getHours(); //0-23시
+  let minute = now.getMinutes(); //0-59분
+  let second = now.getSeconds(); //0-59초
+  let noon = "오전";
   if (hour > 11) {
     noon = "오후";
     hour = hour - 12;
@@ -18,7 +17,15 @@ function getTime() {
     }
   }
 
-  timeDiv.textContent = noon +" " +    formatNumber(hour) +    ":" +    formatNumber(minute) +    ":" +    formatNumber(second);
+
+  timeDiv.textContent =
+    noon +
+    " " +
+    formatNumber(hour) +
+    ":" +
+    formatNumber(minute) +
+    ":" +
+    formatNumber(second);
 }
 
 function getDate() {
